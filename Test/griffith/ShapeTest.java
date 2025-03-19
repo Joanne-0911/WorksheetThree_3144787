@@ -30,6 +30,11 @@ public class ShapeTest {
 
     @Test
     public void testRightAngledTriangle() {
+RightAngledTriangle triangle = new RightAngledTriangle("Triangle", 3.0, 4.0, 5.0);
+        
+        assertEquals(6.0, triangle.area(), 0); // EPSILON = 0
+        assertEquals(12.0, triangle.perimeter(), 0);
+        assertEquals("Shape: Triangle, Base: 3.0, Height: 4.0, Hypotenuse: 5.0", triangle.toString());
         
     }
 }
