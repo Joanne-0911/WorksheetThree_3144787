@@ -1,41 +1,30 @@
 package griffith;
 
+//RightAngledTriangle subclass that extends Shape
 public class RightAngledTriangle extends Shape {
-    private double base, height, hypotenuse;
+ private double base;
+ private double height;
+ private double hypotenuse;
 
-    public RightAngledTriangle(String name, double base, double height, double hypotenuse) {
-        super(name);
-        this.base = base;
-        this.height = height;
-        this.hypotenuse = hypotenuse;
-    }
+ public RightAngledTriangle(String name, double base, double height, double hypotenuse) {
+     super(name);
+     this.base = base;
+     this.height = height;
+     this.hypotenuse = hypotenuse;
+ }
 
-    public double getBase() {
-        return base;
-    }
+ @Override
+ public double area() {
+     return (base * height) / 2;
+ }
 
-    public double getHeight() {
-        return height;
-    }
+ @Override
+ public double perimeter() {
+     return base + height + hypotenuse;
+ }
 
-    public double getHypotenuse() {
-        return hypotenuse;
-    }
-
-    @Override
-    public double area() {
-        // No implementation yet (TDD)
-        return 0;
-    }
-
-    @Override
-    public double perimeter() {
-        // No implementation yet (TDD)
-        return 0;
-    }
-
-    @Override
-    public String toString() {
-        return "Shape: " + getName() + ", Base: " + base + ", Height: " + height + ", Hypotenuse: " + hypotenuse;
-    }
+ @Override
+ public String toString() {
+     return super.toString() + ", Base: " + base + ", Height: " + height + ", Hypotenuse: " + hypotenuse;
+ }
 }
