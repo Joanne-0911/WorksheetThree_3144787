@@ -1,41 +1,30 @@
 package griffith;
 
+//Rhombus subclass that extends Shape
 public class Rhombus extends Shape {
-    private double diagonal1, diagonal2, side;
+ private double diagonal1;
+ private double diagonal2;
+ private double side;
 
-    public Rhombus(String name, double diagonal1, double diagonal2, double side) {
-        super(name);
-        this.diagonal1 = diagonal1;
-        this.diagonal2 = diagonal2;
-        this.side = side;
-    }
+ public Rhombus(String name, double diagonal1, double diagonal2, double side) {
+     super(name);
+     this.diagonal1 = diagonal1;
+     this.diagonal2 = diagonal2;
+     this.side = side;
+ }
 
-    public double getDiagonal1() {
-        return diagonal1;
-    }
+ @Override
+ public double area() {
+     return (diagonal1 * diagonal2) / 2;
+ }
 
-    public double getDiagonal2() {
-        return diagonal2;
-    }
+ @Override
+ public double perimeter() {
+     return 4 * side;
+ }
 
-    public double getSide() {
-        return side;
-    }
-
-    @Override
-    public double area() {
-        // No implementation yet (TDD)
-        return 0;
-    }
-
-    @Override
-    public double perimeter() {
-        // No implementation yet (TDD)
-        return 0;
-    }
-
-    @Override
-    public String toString() {
-        return "Shape: " + getName() + ", Diagonal1: " + diagonal1 + ", Diagonal2: " + diagonal2 + ", Side: " + side;
-    }
+ @Override
+ public String toString() {
+     return super.toString() + ", Diagonal1: " + diagonal1 + ", Diagonal2: " + diagonal2 + ", Side: " + side;
+ }
 }

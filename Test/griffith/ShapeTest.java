@@ -9,7 +9,9 @@ import org.junit.jupiter.api.Test;
 
 public class ShapeTest {
 
-    @Test
+	private static final double EPSILON = 0.0001;
+
+	@Test
     public void testCircle() {
         Circle circle = new Circle("Circle", 3.5);
         
@@ -20,6 +22,10 @@ public class ShapeTest {
 
     @Test
     public void testRhombus() {
+    	Rhombus rhombus = new Rhombus("Rhombus", 6.0, 8.0, 5.0);
+        assertEquals(24.0, rhombus.area(), EPSILON);
+        assertEquals(20.0, rhombus.perimeter(), EPSILON);
+        assertEquals("Shape: Rhombus, Diagonal1: 6.0, Diagonal2: 8.0, Side: 5.0", rhombus.toString());
     	 
         
     }
