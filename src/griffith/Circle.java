@@ -1,5 +1,6 @@
 package griffith;
 
+// Circle subclass that extends Shape
 public class Circle extends Shape {
     private double radius;
 
@@ -18,18 +19,16 @@ public class Circle extends Shape {
 
     @Override
     public double area() {
-        // No implementation yet (TDD)
-        return 0;
+        return Math.PI * radius * radius;
     }
 
     @Override
     public double perimeter() {
-        // No implementation yet (TDD)
-        return 0;
+        return 2 * Math.PI * radius;
     }
 
     @Override
     public String toString() {
-        return "Shape: " + getName() + ", Radius: " + radius;
+        return super.toString() + ", Radius: " + radius;
     }
 }
